@@ -2,6 +2,7 @@ package com.advanced.start.v3;
 
 import com.advanced.start.trace.TraceStatus;
 import com.advanced.start.trace.logtrace.LogTrace;
+import com.advanced.start.trace.logtrace.ThreadLocalLogTrace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class OrderServiceV3 {
 	private final OrderRepositoryV3 repository;
-	private final LogTrace trace;
+	private final ThreadLocalLogTrace trace;
 
 	public void orderItem(String itemId) {
 		TraceStatus status = null;

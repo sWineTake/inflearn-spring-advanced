@@ -2,6 +2,7 @@ package com.advanced.start.v3;
 
 import com.advanced.start.trace.TraceStatus;
 import com.advanced.start.trace.logtrace.LogTrace;
+import com.advanced.start.trace.logtrace.ThreadLocalLogTrace;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class OrderRepositoryV3 {
 
-	private final LogTrace trace;
+	private final ThreadLocalLogTrace trace;
 
 	/**
 	 * 아이템 이름을 받아 저장
