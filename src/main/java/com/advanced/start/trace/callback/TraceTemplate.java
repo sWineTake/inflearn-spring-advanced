@@ -3,16 +3,12 @@ package com.advanced.start.trace.callback;
 
 import com.advanced.start.trace.TraceStatus;
 import com.advanced.start.trace.logtrace.LogTrace;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TraceTemplate {
 
-	private final LogTrace trace;
-
-	public TraceTemplate(LogTrace trace) {
-		this.trace = trace;
-	}
-
-	public <T> T execute(String message, TraceCallBack<T> callBack) {
+	public <T> T execute(String message, TraceCallBack<T> callBack, LogTrace trace) {
 		TraceStatus status = null;
 		try {
 			status = trace.begin(message);
